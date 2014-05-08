@@ -308,7 +308,7 @@ ul {
   font-family: Georgia, Garamond, serif !important;
   font-size: 110% !important;
   font-style: italic;
-  line-height: 1.6em;
+  line-height: 2em;
   margin-left: 1em; }
   .poetry pre code {
     font-family: Georgia, Garamond, serif !important; }
@@ -372,6 +372,7 @@ pre, code {
   font-family: Inconsolata,Menlo,Monaco,monospace;
   font-size: 18px;
   font-weight: 300 !important;
+  line-height: 1.8em;
   text-align: left;
   margin: 2em 0;
   font-weight: normal; }

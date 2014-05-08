@@ -7,9 +7,9 @@
 <p>The following allows you to store your name and email address and have them be
 associated to each commit message.</p>
 
-<p><code>git config --global user.name ``&quot;YourFirstName YourLastName&quot;</code></p>
+<p><code>git config --global user.name &quot;YourFirstName YourLastName&quot;</code></p>
 
-<p><code>git config --global user.email ``'YourEmail@domain.com'</code></p>
+<p><code>git config --global user.email &quot;YourEmail@domain.com&quot;</code></p>
 
 <p><code>git config --list</code></p>
 
@@ -17,12 +17,31 @@ associated to each commit message.</p>
 </div></article>
 <article><div class="inner"><header><h4>Creating Git Command Aliases</h4></header>
 
-<p><code>git config --global ``alias``.co checkout</code></p>
+<p><code>git config --global alias.co &quot;checkout&quot;</code></p>
 
-<p><code>git config --global ``alias``.ci commit</code></p>
+<p><code>git config --global alias.ci &quot;commit&quot;</code></p>
 
-<p><code>git config --global ``alias``.lc log ORIG_HEAD.. --stat --no-merges (``if</code>
-<code>you want to list all commits after you fetched but exclude merges)</code></p>
+<p><code>git config --global alias.lc &quot;log ORIG_HEAD.. --stat --no-merges&quot;</code> (If you want to list all commits after you fetched but exclude merges)</p>
+
+<p><code>git config --global alias.st &quot;status&quot;</code></p>
+
+<p><code>git config --global alias.br &quot;branch&quot;</code></p>
+
+<p><code>git config --global alias.df &quot;diff&quot;</code></p>
+
+<p><code>git config --global alias.who &quot;shortlog -s --&quot;</code></p>
+
+<p><code>git config --global alias.lg &quot;log -n 20 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %an' --abbrev-commit --date=relative&quot;</code></p>
+
+<p><code>git config --global alias.last &quot;cat-file commit HEAD&quot;</code></p>
+
+<p><code>git config --global alias.stc &quot;diff --stat --name-status --cached&quot;</code></p>
+
+<p><code>git config --global alias.up &quot;!git remote update ; git gc&quot;</code></p>
+
+<p><code>git config --global alias.log1 &quot;log --pretty=oneline --abbrev-commit --decorate&quot;</code></p>
+
+<p><code>git config --global alias.undo &quot;reset --hard&quot;</code></p>
 
 </div></article><article><div class="inner"><header><h4>Initializing an Empty Git Repository</h4></header>
 
@@ -30,9 +49,9 @@ associated to each commit message.</p>
 directories and hooks. Hooks can be executed after certain events. More on
 hooks maybe later.</p>
 
-<p><code>cd</code> <code>[root of project directory]</code></p>
+<p><code>cd [root of project directory]</code></p>
 
-<p><code>git init (creates a .git directory)</code></p>
+<p><code>git init</code> (creates a .git directory)</p>
 
 </div></article><article><div class="inner"><header><h4>Ignoring Files from being tracked</h4></header>
 
@@ -55,8 +74,7 @@ changes. See below.</p>
 
 <p><code>git add .</code></p>
 
-<p><code>git status (tells you ``which</code> <code>files have been added and ready to be
-committed)</code></p>
+<p><code>git status</code> (tells you which files have been added and ready to be committed)</p>
 
 </div></article><article><div class="inner"><header><h4>Undos an add</h4></header>
 
@@ -64,10 +82,9 @@ committed)</code></p>
 
 <p>If for some reason you’d like to undo the git add, do the following:</p>
 
-<p><code>git reset FILENAME``/DIRNAME</code></p>
+<p><code>git reset [FILENAME/DIRNAME]</code></p>
 
-<p><code>git status (to confirm your files now show under the ``'Untracked files'</code>
-<code>section)</code></p>
+<p><code>git status</code> (to confirm your files now show under the 'Untracked files' section)</p>
 
 </div></article><article><div class="inner"><header><h4>Reverting All of Your Local Changes</h4></header>
 
@@ -75,8 +92,7 @@ committed)</code></p>
 <li>Be careful with the following as it will revert all of your local changes to HEAD version.</li>
 </ul>
 
-<p><code>git status (these are the files ``which</code> <code>will be reverted when executing the
-following)</code></p>
+<p><code>git status</code> (these are the files which will be reverted when executing the following)</code></p>
 
 <p><code>git checkout -f</code></p>
 
@@ -86,8 +102,7 @@ following)</code></p>
 <li>Be careful with the following as it will revert all of your local changes to HEAD version.</li>
 </ul>
 
-<p><code>git status (these are the files ``which</code> <code>will be reverted when executing the
-following)</code></p>
+<p><code>git status</code> (these are the files which will be reverted when executing the following)</code></p>
 
 <p><code>git clean -fd</code></p>
 
@@ -97,18 +112,17 @@ following)</code></p>
 
 <p>See below to see how to commit files subsequent times.</p>
 
-<p><code>git status (tells you ``which</code> <code>files have been added and ready to be
-committed)</code></p>
+<p><code>git status</code> (tells you which files have been added and ready to be committed)</code></p>
 
-<p><code>git commit -m ``&quot;First Commit&quot;</code></p>
+<p><code>git commit -m &quot;First Commit&quot;</code></p>
 
 </div></article><article><div class="inner"><header><h4>To see which files have been committed to the Local Git Repository</h4></header>
 
-<p><code>git ``ls``-files</code></p>
+<p><code>git ls-files</code></p>
 
 </div></article><article><div class="inner"><header><h4>To Remove a File that’s already committed</h4></header>
 
-<p><code>git ``rm</code> <code>[filename]</code></p>
+<p><code>git rm [FILENAME]</code></p>
 
 </div></article><article><div class="inner"><header><h4>To Amend to last Git Commit</h4></header>
 
@@ -120,26 +134,21 @@ committed)</code></p>
 
 </div></article><article><div class="inner"><header><h4>Commit files to Git to Local Repository Subsequent Times</h4></header>
 
-<p>git commit -a is the same as doing a git add [file name] followed by git
-commit -m “your commit message”</p>
+<p><code>git commit -a</code> is the same as doing a <code>git add [FILENAME]</code> followed by <code>git commit -m “your commit message”</code></p>
 
-<p>The git commit -a option will automatically include all files that need to be
-added to the commit.</p>
+<p>The <code>git commit -a</code> option will automatically include all files that need to be added to the commit.</p>
 
-<p><code>git status (tells you ``which</code> <code>files have been added and ready to be
-committed)</code></p>
+<p><code>git status</code> (tells you which files have been added and ready to be committed)</code></p>
 
 <p><code>git commit -a</code></p>
 
-<p><code>Then edit notes ``in</code> <code>the ``file</code> <code>and save it.</code></p>
+<p>Then edit notes in the default editor and save it.</p>
 
-<p><code>git commit -m ``&quot;your description of what was changed&quot;</code> <code>-a (you can ``do</code>
-<code>this instead of git commit -a. This will prevent the editor from being opened
-though)</code></p>
+<p><code>git commit -m &quot;your description of what was changed&quot; -a</code> (you can do this instead of <code>git commit -a</code>. This will prevent the editor from being opened though)</p>
 
 </div></article><article><div class="inner"><header><h4>To Include a diff of contents in the commit message</h4></header>
 
-<p><code>git commit -``v</code></p>
+<p><code>git commit -v</code></p>
 
 </div></article><article><div class="inner"><header><h4>To see a log history of Git commits</h4></header>
 
@@ -151,24 +160,23 @@ though)</code></p>
 
 </div></article><article><div class="inner"><header><h4>To see change history of given file</h4></header>
 
-<p><code>gitk filename</code></p>
+<p><code>git filename</code></p>
 
-<p><code>OR</code></p>
+<p>OR</p>
 
 <p><code>git log -p filename</code></p>
 
 </div></article><article><div class="inner"><header><h4>To open a Commit Viewer for Git</h4></header>
 
-<p>If you receive an error saying “Error reading commits:fatal:unrecognized
-arguments: -all”, it’s because the all flag option requires two hyphens. See
-below:</p>
+<p>If you receive an error saying:</p>
+<p><code>“Error reading commits:fatal:unrecognized arguments: -all”</code></p>
+<p>it’s because the all flag option requires two hyphens. See below:</p>
 
-<p><code>gitk --all</code></p>
+<p><code>git --all</code></p>
 
 </div></article><article><div class="inner"><header><h4>To See a List of Local Branches</h4></header>
 
-<p>The name of the colored branch indicates the branch you are working on
-currently.</p>
+<p>The name of the colored branch indicates the branch you are working on currently.</p>
 
 <p><code>git branch --color</code></p>
 
@@ -178,17 +186,17 @@ currently.</p>
 
 </div></article><article><div class="inner"><header><h4>To Delete a Local Branch</h4></header>
 
-<p>You can first get a list of branches as described above and then do the
-following:</p>
+<p>You can first get a list of branches as described above and then do the following:</p>
 
 <p><code>git branch -d [branch_name]</code></p>
 
 </div></article><article><div class="inner"><header><h4>To Delete a Local Branch</h4></header>
 
-<p>Beware to make sure this is really what you want to do!</p>
+<ul>
+<li>Beware to make sure this is really what you want to do!</li>
+</ul>
 
-<p>You can first get a list of remote branches as described above and then
-execute the command below.</p>
+<p>You can first get a list of remote branches as described above and then execute the command below.</p>
 
 <ul>
 <li>Be sure the branch name is preceded with a colon. Notice it below.</li>
@@ -198,15 +206,13 @@ execute the command below.</p>
 
 </div></article><article><div class="inner"><header><h4>To Create a New Branch and Switch to It</h4></header>
 
-<p>It’s important to remember that if you add a file in one branch, the file
-won’t exist in another branch, unless you add it or merge it.</p>
+<p>It’s important to remember that if you add a file in one branch, the file won’t exist in another branch, unless you add it or merge it.</p>
 
 <p><code>git branch [branch name]</code></p>
 
 <p><code>git checkout [branch name]</code></p>
 
-<p><code>git co [branch name] (you can use co ``if</code> <code>you've ``set</code> <code>up the ``alias</code>
-<code>co above)</code></p>
+<p><code>git co [branch name]</code> (you can use co if you've set up the alias <code>co</code> above)</p>
 
 <p><code>git branch --color</code></p>
 
@@ -222,14 +228,13 @@ won’t exist in another branch, unless you add it or merge it.</p>
 
 </div></article><article><div class="inner"><header><h4>To Push Local Branch to Remote Repository</h4></header>
 
-<p>When you create a branch in your local repo, it’s not automatically added to
-the remote repo; You need to push it there.</p>
+<p>When you create a branch in your local repo, it’s not automatically added to the remote repo; You need to push it there.</p>
 
 <p><code>git push origin [branch name]</code></p>
 
 </div></article><article><div class="inner"><header><h4>To Push all Local Branches and Tags to Repository</h4></header>
 
-<p><code>git push origin ``'*:*'</code></p>
+<p><code>git push origin '*:*'</code></p>
 
 </div></article><article><div class="inner"><header><h4>To See Remote Branches and Switch to Them</h4></header>
 
@@ -239,107 +244,60 @@ the remote repo; You need to push it there.</p>
 
 </div></article><article><div class="inner"><header><h4>To Clone a Repository and its Files/Directories</h4></header>
 
-<p>For example, you may want to clone an existing repository that’s located on
-the same server as where you want to create the new clone. OR you may want to
-create the new clone on your local computer from the source repository which
-is on a shared hosting account.</p>
+<p>For example, you may want to clone an existing repository that’s located on the same server as where you want to create the new clone. OR you may want to create the new clone on your local computer from the source repository which is on a shared hosting account.</p>
 
-<p><code>git clone ``/source/repository/path</code> <code>/destination/repository/path</code> <code>(assumes
-the ``source</code> <code>repository is on the same server as where you want to clone)</code></p>
+<p><code>git clone [source/repository/path] [/destination/repository/path]</code> (assumes the source repository is on the same server as where you want to clone)</p>
 
-<p><code>OR</code></p>
+<p>OR</p>
 
-<p><code>cd</code> <code>[to_a_directory_above_where_you_want_the_project_files_to_go]</code></p>
+<p><code>cd [to_a_directory_above_where_you_want_the_project_files_to_go]</code></p>
 
-<p><code>git clone username@yourdomain.com/~``/git/yourproject``.git (to clone a
-remote git repository)</code></p>
+<p><code>git clone username@yourdomain.com/~/git/yourproject.git</code> (to clone a remote git repository)</p>
 
 </div></article><article><div class="inner"><header><h4>To Sync files of this clone to HEAD of other clone</h4></header>
 
-<p><code>cd</code> <code>this_repository_directory (one directory above .git)</code></p>
+<p><code>cd [this_repository_directory]</code> (one directory above .git)</p>
 
-<p><code>git pull ``/the/other/clone</code> <code>HEAD</code></p>
+<p><code>git pull [/the/other/clone] HEAD</code></p>
 
 </div></article><article><div class="inner"><header><h4>Example of Merging Code in Git</h4></header>
 
-<p>In this example, I’ll show you how to do a merge, after a conflict, between
-code of two branches. This is the case where Git couldn’t auto-merge.</p>
+<p>In this example, I’ll show you how to do a merge, after a conflict, between code of two branches. This is the case where Git couldn’t auto-merge.</p>
 
-<p><code>git checkout master (switches you to the master branch)</code></p>
+<p><code>git checkout master</code> (switches you to the master branch)</p>
 
-<p><code>vi</code> <code>testfile (add the following line ``in</code> <code>testfile and save)</code></p>
+<p><code>vi testfile</code> (add the following lines in testfile and save)</code></p>
 
-<p><code>adfasfasdfadf</code></p>
+<p><code>adfasfasdfadf<br>asdf<br>a<br>sdf<br>asdf<br>asdfasdf;lkja;kladjsf;klj</code></p>
 
-<p><code>asdf</code></p>
+<p><code>git add [testfile]</code> (allows it to be tracked by Git)</p>
 
-<p><code>a</code></p>
+<p><code>git commit -m &quot;adding content for master branch&quot; -a</code></p>
 
-<p><code>sdf</code></p>
+<p><code>git branch test</code> (create the test branch)</p>
 
-<p><code>asdf</code></p>
+<p><code>git checkout test</code> (switches you to the tes branch)</p>
 
-<p><code>asdfasdf;lkja;kladjsf;klj</code></p>
+<p><code>vi testfile</code> (delete all of the existing content and make your testfile in the test branch look like this:</p>
 
-<p><code>git add testfile (allows it to be tracked by Git)</code></p>
+<p><code>;lkajsdf;lkajdsl;kajsdf<br>;lkajsdf;ladjsl;kadjsf<br>asdf<br>asd<br>fasd<br>fadsf</code></p>
 
-<p><code>git commit -m ``&quot;adding content for master branch&quot;</code> <code>-a</code></p>
+<p><code>git commit -m &quot;adding content for test branch&quot; -a</code></p>
 
-<p><code>git branch ``test</code> <code>(create the ``test</code> <code>branch)</code></p>
+<p><code>git merge master</code> (merge contents of this test branch with the master branch. See below for results.)</code></p>
 
-<p><code>git checkout ``test</code> <code>(switches you to the ``test</code> <code>branch)</code></p>
+<p><code>your_username$ git merge master<br>
+    Auto-merged testfile<br>
+    CONFLICT (content): Merge conflict in testfile<br>
+    Automatic merge failed; fix conflicts and then commit the result.</code></p>
 
-<p><code>vi</code> <code>testfile (delete all of the existing content and ``make</code> <code>your testfile
-``in</code> <code>the ``test</code> <code>branch ``look</code> <code>like this:)</code></p>
+<p><code>vi testfile</code> (edit this file, resolve the conflicts by getting rid of the &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:testfileD:testfile, ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt; master:testfile and make the file look like how it should)</code></p>
 
-<p><code>;lkajsdf;lkajdsl;kajsdf</code></p>
+<p>Assume the file's contents should look like this:</p>
 
-<p><code>;lkajsdf;ladjsl;kadjsf</code></p>
+<p><code>;lkajsdf;lkajdsl;kajsdf<br>;lkajsdf;ladjsl;kadjsf<br>asdf<br>asd<br>fasd<br>fadsf<br>asdfasdf;lkja;kladjsf;klj</code></p>
 
-<p><code>asdf</code></p>
-
-<p><code>asd</code></p>
-
-<p><code>fasd</code></p>
-
-<p><code>fadsf</code></p>
-
-<p><code>git commit -m ``&quot;adding content for test branch&quot;</code> <code>-a</code></p>
-
-<p><code>git merge master (merge contents of this ``test</code> <code>branch with the master
-branch. see below)</code></p>
-
-<p><code>your_username$ git merge master</code></p>
-
-<p><code>Auto-merged testfile</code></p>
-
-<p><code>CONFLICT (content): Merge conflict ``in</code> <code>testfile</code></p>
-
-<p><code>Automatic merge failed; fix conflicts and ``then</code> <code>commit the result.</code></p>
-
-<p><code>vi</code> <code>testfile (edit this ``file``, resolve the conflicts by getting rid of
-the &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD:testfileD:testfile, ======= and &gt;&gt;&gt;&gt;&gt;&gt;&gt; master:testfile and
-``make</code> <code>the ``file</code> <code>look</code> <code>like how it should)</code></p>
-
-<p><code>Assume the ``file``'s contents should ``look</code> <code>like this:</code></p>
-
-<p><code>;lkajsdf;lkajdsl;kajsdf</code></p>
-
-<p><code>;lkajsdf;ladjsl;kadjsf</code></p>
-
-<p><code>asdf</code></p>
-
-<p><code>asd</code></p>
-
-<p><code>fasd</code></p>
-
-<p><code>fadsf</code></p>
-
-<p><code>asdfasdf;lkja;kladjsf;klj</code></p>
-
-<p><code>git commit -m ``&quot;adding content for master branch&quot;</code> <code>-a (to commit your
-changes)</code></p>
-</section>
+<p><code>git commit -m &quot;adding content for master branch&quot; -a</code> (to commit your changes)</p></section>
 
 <hr />
 
